@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Header from '../compoents/Header'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 import Grid from './Grid'
+import CodeBlock from '../compoents/CodeBlock'
+import { Binary_Search } from './constans'
 
 const random = (min, max) => Math.floor(Math.random() * (max - min)) + min
 
@@ -20,19 +20,7 @@ export default () => {
   const [finish, setFinish] = useState(false)
   const [generated, setGenerated] = useState([])
 
-  const code = `function binarySearch(nums, l, h, target) {
-  while (l <= h) {
-    const m = Math.floor(l + (h - l) / 2)
-    if (nums[m] < target) {
-      l = m + 1
-    } else if (nums[m] > target) {
-      h = m - 1
-    } else {
-      return m
-    }
-  }
-  return -1
-}`
+  const code = Binary_Search
 
   function reset () {
     setGenerated([])
@@ -111,17 +99,7 @@ export default () => {
   return <>
     <Header title="Binary Search Visualization"/>
 
-    <section className="flex items-center justify-center flex-wrap mb-8"
-             style={{ backgroundColor: '#2B2B2B' }}>
-      <div className="w-min">
-        <SyntaxHighlighter
-          customStyle={{ padding: '1em' }}
-          language="javascript"
-          style={darcula}>
-          {code}
-        </SyntaxHighlighter>
-      </div>
-    </section>
+    <CodeBlock code={code}/>
 
     <section className="flex justify-center my-8">
       <div className="flex justify-between w-6/12 items-center">
