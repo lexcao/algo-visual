@@ -15,6 +15,14 @@ const Divider = ({ children }) => <section className="flex justify-center items-
   </div>
 </section>
 
+const Lines = Object.freeze({
+  None: -1,
+  Assign_M: 3,
+  Update_L: 5,
+  Update_H: 7,
+  Return_M: 9
+})
+
 export default () => {
   const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -27,6 +35,9 @@ export default () => {
   const [finish, setFinish] = useState(false)
   const [generated, setGenerated] = useState([])
 
+  const [line, setLine] = useState(Lines.None)
+  const [step, setStep] = useState(1)
+
   const code = Binary_Search
 
   function reset () {
@@ -36,29 +47,40 @@ export default () => {
     setL(-1)
     setH(-1)
     setM(-1)
+    setLine(Lines.None)
   }
 
   function nextRound () {
-    binarySearch(nums, l, h, t)
+    if (step === 1) {
+      step1_PickMid()
+      setStep(2)
+    } else if (step === 2) {
+      step2_MoveCursor()
+      setStep(1)
+    }
   }
 
-  function binarySearch (nums, l, h, target) {
-    let low = l, high = h, m = -1
-    if (l <= h) {
-      m = Math.floor(l + (h - l) / 2)
-      if (nums[m] < target) {
-        low = m + 1
-        setL(low)
-        setM(mid(m + 1, h))
-      } else if (nums[m] > target) {
-        high = m - 1
-        setH(high)
-        setM(mid(l, m - 1))
-      } else {
-        doFinish()
-      }
+  function step1_PickMid () {
+    setM(mid(l, h))
+    setLine(Lines.Assign_M)
+    logGenerate(l, h, mid(l, h), t, true)
+  }
+
+  function step2_MoveCursor () {
+    let low = l, high = h
+    if (nums[m] < t) {
+      low = m + 1
+      setL(low)
+      setLine(Lines.Update_L)
+    } else if (nums[m] > t) {
+      high = m - 1
+      setH(high)
+      setLine(Lines.Update_H)
+    } else {
+      doFinish()
+      setLine(Lines.Return_M)
     }
-    logGenerate(low, high, mid(low, high), target, nums[m] !== target)
+    logGenerate(low, high, m, t, nums[m] !== t)
   }
 
   function mid (l, h) {
@@ -68,7 +90,6 @@ export default () => {
   function run () {
     setL(0)
     setH(nums.length - 1)
-    setM(mid(0, nums.length - 1))
     setRunning(true)
 
     let target = t
@@ -76,7 +97,7 @@ export default () => {
       target = random(0, nums.length - 1)
       setT(target)
     }
-    logGenerate(0, nums.length - 1, mid(0, nums.length - 1), target, true)
+    logGenerate(0, nums.length - 1, -1, target, true)
   }
 
   function doFinish () {
@@ -84,8 +105,13 @@ export default () => {
     setRunning(false)
   }
 
-  function logGenerate (l, h, m, t, r) {
-    setGenerated(it => it.concat({ nums, l, h, m, t, running: r }))
+  // invoke in one place when react state changes immediately
+  function logGenerate (l, h, m, t, running) {
+    if (!running) {
+      l = -1
+      h = -1
+    }
+    setGenerated(it => it.concat({ nums, l, h, m, t, running }))
   }
 
   function runOrNextStep () {
@@ -95,13 +121,12 @@ export default () => {
       reset()
       run()
     }
-    // TODO log once here
   }
 
   return <>
     <Header title="Binary Search Visualization"/>
 
-    <CodeBlock code={code}/>
+    <CodeBlock {...{ code, line }}/>
 
     <ControlBar {...{
       target: t, found: finish ? m : undefined,
@@ -113,7 +138,7 @@ export default () => {
     <Divider>⬇️ ⬇️ ⬇️ Step by step ⬇️ ⬇️ ⬇️</Divider>
 
     {generated &&
-    generated.map(it => <NumsRow readonly={true} key={it.m} {...it}/>)
+    generated.map(it => <NumsRow readonly={true} key={'' + it.l + it.m + it.h} {...it}/>)
     }
   </>
 }

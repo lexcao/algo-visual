@@ -42,7 +42,6 @@ export default ({ readonly = false, nums, running, l, m, h, t, onClick }) => {
   const cards = nums.map((it, i) => {
 
     const types = ofCellType(i, l, m, h, t)
-    console.log(readonly ? 'readonly: ' : '', types)
     const targetCell = types.find(it => it === CellType.Target)
     const arrows = running ? getArrows(types) : getFound(types)
 
