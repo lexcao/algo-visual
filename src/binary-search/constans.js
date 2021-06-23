@@ -16,3 +16,11 @@ function binarySearch(nums, l, h, target) {
 export const Binary_Search_With_Duplicates = ``
 export const Binary_Search_In_Rotated = ``
 export const Binary_Search_With_Duplicates_In_Rotated = ``
+
+export const CellType = Object.freeze({
+  Empty: '',
+  Low: 'low',
+  Mid: 'mid',
+  High: 'high',
+  Target: 'target',
+})
