@@ -1,6 +1,8 @@
 import { getMid } from '../utils'
 
-const name = 'binary search'
+const id = 'sorted-array'
+
+const name = 'sorted array'
 
 const Lines = Object.freeze({
   Assign_M: 3,
@@ -52,5 +54,5 @@ const onNextRound = (pos, updatePos, step, setStep, t) => {
 }
 
 export default {
-  name, code, nums, onNextRound
+  id, name, code, nums, onNextRound
 }

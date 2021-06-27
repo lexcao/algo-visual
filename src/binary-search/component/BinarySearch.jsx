@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import Header from '../../components/Header'
 import CodeBlock from '../../components/CodeBlock'
 import ControlBar from './ControlBar'
 import NumsRow from './NumsRow'
+import { useHistory, useParams } from 'react-router-dom'
 import { equals, randomElement } from '../utils'
+import data from '../data/index'
 
 const Divider = ({ children }) => <section className="flex justify-center items-center my-8">
   <div className="w-6/12 border-t-2 flex justify-center">
@@ -15,7 +16,20 @@ const Divider = ({ children }) => <section className="flex justify-center items-
 
 const initPos = { l: -1, h: -1, m: -1, line: -1 }
 
-export default ({ onNextRound, nums, code }) => {
+const dataMap = {}
+
+for (let d of data) {
+  dataMap[d.id] = d
+}
+
+export default () => {
+
+  const { id } = useParams()
+  if (!id || !dataMap[id]) {
+    useHistory().replace('/binary-search')
+  }
+
+  const { onNextRound, nums, code } = dataMap[id] || data[0]
 
   const [target, setTarget] = useState(-1)
   const [pos, setPos] = useState(initPos)
@@ -71,8 +85,6 @@ export default ({ onNextRound, nums, code }) => {
   }
 
   return <>
-    <Header title="Binary Search Visualization"/>
-
     <CodeBlock code={code} line={pos.line}/>
 
     <ControlBar

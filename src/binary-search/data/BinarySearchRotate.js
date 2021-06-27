@@ -1,6 +1,8 @@
 import { getMid } from '../utils'
 
-const name = 'binary search rotate'
+const id = 'rotated-sorted-array'
+
+const name = 'rotated sorted array'
 
 const Lines = Object.freeze({
   Assign_M: 3,
@@ -71,5 +73,5 @@ const onNextRound = (pos, updatePos, step, setStep, target) => {
 }
 
 export default {
-  name, code, nums, onNextRound
+  id, name, code, nums, onNextRound
 }

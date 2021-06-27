@@ -1,6 +1,8 @@
 import { getMid } from '../utils'
 
-const name = 'binary search in duplicated array'
+const id = 'sorted-array-with-duplicate'
+
+const name = 'sorted array with duplicate'
 
 const Lines = Object.freeze({
   Jump_L: 3,
@@ -92,5 +94,5 @@ const onNextRound = (pos, updatePos, step, setStep, t) => {
 }
 
 export default {
-  name, code, nums, onNextRound
+  id, name, code, nums, onNextRound
 }
