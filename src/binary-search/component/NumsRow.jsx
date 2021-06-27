@@ -1,13 +1,19 @@
 import React from 'react'
-import { ofCellType } from './factory'
-import { CellType } from './constans'
 import classNames from 'classnames'
 
 const Arrow = ({ color, name }) =>
-  <div className="flex-1 flex-col mt-2 text-3xl flex items-center">
+  <div className="flex-1 flex-col mt-2 text-3xl flex items-center select-none">
     <span className={color}>&#8593;</span>
     <span>{name}</span>
   </div>
+
+const CellType = Object.freeze({
+  Empty: '',
+  Low: 'low',
+  Mid: 'mid',
+  High: 'high',
+  Target: 'target',
+})
 
 const cellStyle = {
   [CellType.Low]: 'text-blue-500',
@@ -23,6 +29,33 @@ const cellName = {
   [CellType.High]: 'h',
   [CellType.Target]: 'target',
   [CellType.Empty]: ''
+}
+
+const ofCellType = (i, l, m, h, t) => {
+  const types = [CellType.Empty]
+
+  if (i === l) {
+    types.push(CellType.Low)
+  }
+
+  if (i === m) {
+    types.push(CellType.Mid)
+  }
+
+  if (i === h) {
+    types.push(CellType.High)
+  }
+
+  if (i === t) {
+    types.push(CellType.Target)
+  }
+
+  if (types.length > 1) {
+    // remove Empty
+    types.shift()
+  }
+
+  return types
 }
 
 export default ({ readonly = false, nums, running, l, m, h, t, onClick }) => {
@@ -45,7 +78,7 @@ export default ({ readonly = false, nums, running, l, m, h, t, onClick }) => {
     const targetCell = types.find(it => it === CellType.Target)
     const arrows = running ? getArrows(types) : getFound(types)
 
-    const basicClass = 'hover:scale-110 hover:text-3xl hover:font-bold transform w-24 h-24 mx-1 shadow bg-white rounded text-2xl flex items-center justify-center'
+    const basicClass = 'hover:scale-110 hover:text-3xl hover:font-bold transform w-16 h-16 mx-1 shadow bg-white rounded text-2xl flex items-center justify-center'
 
     const container = classNames(basicClass, {
       'cursor-none': readonly,
