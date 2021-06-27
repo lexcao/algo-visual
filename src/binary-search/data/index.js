@@ -1,7 +1,11 @@
-import binarySearch from './BinarySearch'
+import BinarySearch from './BinarySearch'
 import BinarySearchDuplicate from './BinarySearchDuplicate'
+import BinarySearchRotate from './BinarySearchRotate'
+import BinarySearchRotateDuplicate from './BinarySearchRotateDuplicate'
 
 export default [
-  binarySearch,
-  BinarySearchDuplicate
+  BinarySearch,
+  BinarySearchDuplicate,
+  BinarySearchRotate,
+  BinarySearchRotateDuplicate
 ]

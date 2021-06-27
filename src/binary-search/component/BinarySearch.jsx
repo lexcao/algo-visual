@@ -17,7 +17,7 @@ const initPos = { l: -1, h: -1, m: -1, line: -1 }
 
 export default ({ onNextRound, nums, code }) => {
 
-  const [t, setT] = useState(-1)
+  const [target, setTarget] = useState(-1)
   const [pos, setPos] = useState(initPos)
 
   const [running, setRunning] = useState(false)
@@ -29,10 +29,11 @@ export default ({ onNextRound, nums, code }) => {
     if (equals(pos, initPos)) {
       return
     }
-    setGenerated(it => it.concat({ ...pos, running, nums, t }))
+    setGenerated(it => it.concat({ ...pos, running, nums, t: target }))
   }, [pos])
 
   function reset () {
+    setStep(1)
     setGenerated([])
     setRunning(false)
     setFinish(false)
@@ -47,13 +48,13 @@ export default ({ onNextRound, nums, code }) => {
   function run () {
     setRunning(true)
 
-    setT(it => it !== -1 ? it : randomElement(nums))
+    setTarget(it => it !== -1 ? it : randomElement(nums))
 
     updatePos({ l: 0, h: nums.length - 1 })
   }
 
   function checkFinish () {
-    if (nums[pos.m] === t) {
+    if (nums[pos.m] === target) {
       setFinish(true)
       setRunning(false)
     }
@@ -61,7 +62,7 @@ export default ({ onNextRound, nums, code }) => {
 
   function runOrNextStep () {
     if (running) {
-      onNextRound(pos, updatePos, step, setStep, t)
+      onNextRound(pos, updatePos, step, setStep, target)
       checkFinish()
     } else {
       reset()
@@ -75,20 +76,20 @@ export default ({ onNextRound, nums, code }) => {
     <CodeBlock code={code} line={pos.line}/>
 
     <ControlBar
-      target={t}
+      target={target}
       found={finish ? pos.m : -1}
       running={running}
       onClickReset={reset}
       onClickNext={runOrNextStep}/>
 
-    <NumsRow {...{ ...pos, nums, t, running }} onClick={(it) => {
-      !running && setT(nums[it])
+    <NumsRow {...{ ...pos, nums, t: target, running }} onClick={(it) => {
+      !running && setTarget(nums[it])
     }}/>
 
     <Divider>⬇️ ⬇️ ⬇️ Step by Step ⬇️ ⬇️ ⬇️</Divider>
 
     {generated && generated.map(it => {
-      return <NumsRow readonly={true} key={'' + it.l + it.m + it.h + it.running} {...it}/>
+      return <NumsRow readonly={true} key={'' + it.l + it.m + it.h + it.running + it.line} {...it}/>
     })}
   </>
 }
