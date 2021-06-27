@@ -31,7 +31,7 @@ const cellName = {
   [CellType.Empty]: ''
 }
 
-const ofCellType = (i, l, m, h, t) => {
+const ofCellType = (nums, i, l, m, h, t) => {
   const types = [CellType.Empty]
 
   if (i === l) {
@@ -46,12 +46,11 @@ const ofCellType = (i, l, m, h, t) => {
     types.push(CellType.High)
   }
 
-  if (i === t) {
+  if (nums[i] === t) {
     types.push(CellType.Target)
   }
 
   if (types.length > 1) {
-    // remove Empty
     types.shift()
   }
 
@@ -74,7 +73,7 @@ export default ({ readonly = false, nums, running, l, m, h, t, onClick }) => {
 
   const cards = nums.map((it, i) => {
 
-    const types = ofCellType(i, l, m, h, t)
+    const types = ofCellType(nums, i, l, m, h, t)
     const targetCell = types.find(it => it === CellType.Target)
     const arrows = running ? getArrows(types) : getFound(types)
 

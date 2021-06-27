@@ -3,7 +3,7 @@ import Header from '../../components/Header'
 import CodeBlock from '../../components/CodeBlock'
 import ControlBar from './ControlBar'
 import NumsRow from './NumsRow'
-import { equals, random } from '../utils'
+import { equals, randomElement } from '../utils'
 
 const Divider = ({ children }) => <section className="flex justify-center items-center my-8">
   <div className="w-6/12 border-t-2 flex justify-center">
@@ -47,11 +47,8 @@ export default ({ onNextRound, nums, code }) => {
   function run () {
     setRunning(true)
 
-    let target = t
-    if (target === -1) {
-      target = random(0, nums.length - 1)
-      setT(target)
-    }
+    setT(it => it !== -1 ? it : randomElement(nums))
+
     updatePos({ l: 0, h: nums.length - 1 })
   }
 
@@ -79,12 +76,14 @@ export default ({ onNextRound, nums, code }) => {
 
     <ControlBar
       target={t}
-      found={finish && pos.m}
+      found={finish ? pos.m : -1}
       running={running}
       onClickReset={reset}
       onClickNext={runOrNextStep}/>
 
-    <NumsRow {...{ ...pos, nums, t, running }} onClick={(it) => !running && setT(nums[it])}/>
+    <NumsRow {...{ ...pos, nums, t, running }} onClick={(it) => {
+      !running && setT(nums[it])
+    }}/>
 
     <Divider>⬇️ ⬇️ ⬇️ Step by Step ⬇️ ⬇️ ⬇️</Divider>
 

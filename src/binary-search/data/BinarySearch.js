@@ -29,18 +29,18 @@ const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 const onNextRound = (pos, updatePos, step, setStep, t) => {
 
   if (step === 1) {
-    step1_PickMid()
+    step_PickMid()
     setStep(2)
   } else if (step === 2) {
-    step2_MoveCursor()
+    step_MoveCursor()
     setStep(1)
   }
 
-  function step1_PickMid () {
+  function step_PickMid () {
     updatePos({ m: getMid(pos.l, pos.h), line: Lines.Assign_M })
   }
 
-  function step2_MoveCursor () {
+  function step_MoveCursor () {
     if (nums[pos.m] < t) {
       updatePos({ l: pos.m + 1, line: Lines.Update_L })
     } else if (nums[pos.m] > t) {

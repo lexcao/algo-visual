@@ -7,7 +7,7 @@ export default ({ target, found, running, onClickReset, onClickNext }) => {
         className="text-gray-900 font-medium text-2xl">
         {running ? 'Reset to change' : 'Click'} target >> {target}
       </span>
-      {found && <span className="font-medium text-2xl">🎉 Found at {found}</span>}
+      {found !== -1 && <span className="font-medium text-2xl">🎉 Found at {found}</span>}
       <div className="flex justify-end">
         <a onClick={onClickReset} className="cursor-pointer text-gray-700 inline-flex items-center uppercase">reset</a>
         <button

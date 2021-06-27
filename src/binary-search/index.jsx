@@ -4,7 +4,7 @@ import BinarySearch from './component/BinarySearch'
 
 export default () => {
 
-  const test = data[0]
+  const test = data[1]
 
   return <BinarySearch {...test}/>
 }
