@@ -18,7 +18,7 @@ function binarySearchRotate(nums, l, h, target) {
     const m = Math.floor(l + (h - l) / 2)
     let value = nums[m]
     
-    if ((value >= nums[0]) !== (target >= nums[0]) {
+    if ((value >= nums[0]) !== (target >= nums[0])) {
         value = target >= nums[0] ? Number.MAX_VALUE : -Number.MAX_VALUE 
     }
     
@@ -73,5 +73,12 @@ const onNextRound = (pos, updatePos, step, setStep, target) => {
 }
 
 export default {
-  id, name, code, nums, onNextRound
+  id, name, code, nums, onNextRound,
+  roles: {
+    pick: Lines.Assign_M,
+    low: Lines.Update_L,
+    high: Lines.Update_H,
+    found: Lines.Return_M,
+    map: Lines.Assign_V
+  }
 }

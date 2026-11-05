@@ -1,0 +1,8 @@
+{
+  "generator": "scripts/generate-brand-assets.mjs",
+  "reads": "src/branding.json",
+  "note": "Neutral placeholder mark and OG template. Not a finished logo. Text is the configured name, tagline, and host.",
+  "name": "Algo-Visual",
+  "tagline": "把二分查找的每一步摊开",
+  "taglineEn": "Binary search, one step at a time"
+}

@@ -1,0 +1,54 @@
+{
+  "routes": [
+    {
+      "id": "index",
+      "path": "/binary-search",
+      "titleSuffix": "二分查找",
+      "labelZh": "二分查找",
+      "labelEn": "Binary search",
+      "summary": "逐步演示二分查找：每次取中点，比较目标，丢掉一半。四个变体：有序数组、含重复、旋转、旋转且含重复。",
+      "introZh": "在已经排好序的序列里，每次只看中点，然后丢掉不可能包含目标的那一半。选一个变体，点一个数作为目标，再一步一步往下走。",
+      "introEn": "In a sorted sequence, each step looks at the midpoint and discards the half that cannot hold the target. Choose a variant, pick a target, and walk the search one step at a time."
+    },
+    {
+      "id": "sorted-array",
+      "path": "/binary-search/sorted-array",
+      "titleSuffix": "有序数组上的二分查找",
+      "labelZh": "有序数组",
+      "labelEn": "Sorted array",
+      "summary": "在递增数组 0 到 9 上逐步演示二分查找，标出低位、中点和高位，并高亮当前代码行。",
+      "introZh": "数组已经从小到大排好。中点比目标小，就把左界移到中点右边；比目标大，就把右界移到中点左边。",
+      "introEn": "The array is sorted ascending. If the midpoint is smaller than the target, the left bound moves just past it. If it is larger, the right bound moves just before it."
+    },
+    {
+      "id": "sorted-array-with-duplicate",
+      "path": "/binary-search/sorted-array-with-duplicate",
+      "titleSuffix": "含重复值的二分查找",
+      "labelZh": "含重复",
+      "labelEn": "Duplicates",
+      "summary": "在含有重复数字的有序数组上演示二分查找：先跳过两端连续的重复值，再取中点比较。",
+      "introZh": "两端如果贴着相同的数字，先把边界挪过这段重复，再取中点。这样中点不会一直落在同一片相同的值上。",
+      "introEn": "When either end sits on a run of equal values, the bound steps past that run before the midpoint is taken, so the search does not stay inside the same plateau."
+    },
+    {
+      "id": "rotated-sorted-array",
+      "path": "/binary-search/rotated-sorted-array",
+      "titleSuffix": "旋转有序数组上的二分查找",
+      "labelZh": "旋转",
+      "labelEn": "Rotated",
+      "summary": "在旋转后的有序数组上演示二分查找：中点与目标不在同一段时，先把中点值映到极值再比较。",
+      "introZh": "数组在某个位置断开后又接上，例如 4 5 6 7 8 9 0 1 2 3。中点和目标如果一个在前半段、一个在后半段，就先把中点当成极大或极小，再决定丢掉哪一半。",
+      "introEn": "The sorted array has been rotated, for example 4 5 6 7 8 9 0 1 2 3. If the midpoint and the target sit on different sides of the break, the midpoint is treated as very large or very small before a half is discarded."
+    },
+    {
+      "id": "rotated-sorted-array-with-duplicate",
+      "path": "/binary-search/rotated-sorted-array-with-duplicate",
+      "titleSuffix": "旋转且含重复的二分查找",
+      "labelZh": "旋转且重复",
+      "labelEn": "Rotated, duplicates",
+      "summary": "在旋转且含重复值的数组上演示二分查找：先跳过两端重复，再按旋转规则比较中点。",
+      "introZh": "这一份同时处理旋转和重复。先跳过两端相同的值，再按旋转数组的规则比较中点。",
+      "introEn": "This variant handles both rotation and duplicates. Equal values at either end are skipped first, then the midpoint is compared with the rotated-array rule."
+    }
+  ]
+}
