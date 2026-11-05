@@ -5,7 +5,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/generate-brand-assets.mjs",
+    "postinstall": "node node_modules/esbuild/install.js",
+    "assets": "node scripts/generate-brand-assets.mjs",
     "build": "NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production vite build && node scripts/prerender-html.mjs && node scripts/check-meta.mjs",
     "test": "node scripts/check-meta.mjs",
     "serve": "vite preview"
