@@ -1,9 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Algo-Visual</title>
+    <meta name="theme-color" content="#1A1410"/>
+    <script>document.documentElement.classList.add('js')</script>
+    <!--seo:head-->
+    <title>二分查找 · Algo-Visual</title>
+    <meta name="description" content="逐步演示二分查找：每次取中点，比较目标，丢掉一半。四个变体：有序数组、含重复、旋转、旋转且含重复。"/>
+    <link rel="canonical" href="https://algo.lexcao.io/binary-search"/>
+    <meta name="robots" content="index,follow"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Algo-Visual"/>
+    <meta property="og:locale" content="zh_CN"/>
+    <meta property="og:locale:alternate" content="en_US"/>
+    <meta property="og:title" content="二分查找 · Algo-Visual"/>
+    <meta property="og:description" content="逐步演示二分查找：每次取中点，比较目标，丢掉一半。四个变体：有序数组、含重复、旋转、旋转且含重复。"/>
+    <meta property="og:url" content="https://algo.lexcao.io/binary-search"/>
+    <meta property="og:image" content="https://algo.lexcao.io/og.png?v=1"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="Algo-Visual：把二分查找的每一步摊开"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="二分查找 · Algo-Visual"/>
+    <meta name="twitter:description" content="逐步演示二分查找：每次取中点，比较目标，丢掉一半。四个变体：有序数组、含重复、旋转、旋转且含重复。"/>
+    <meta name="twitter:image" content="https://algo.lexcao.io/og.png?v=1"/>
+    <link rel="icon" href="/favicon.ico?v=1" sizes="any"/>
+    <link rel="icon" type="image/png" href="/favicon-32.png?v=1" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/favicon-16.png?v=1" sizes="16x16"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1"/>
+    <!--/seo:head-->
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -41,6 +67,24 @@
             width="0"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
+<!--seo:intro-->
+<article id="static-intro">
+    <p class="static-brand"><a href="/binary-search">Algo-Visual</a></p>
+    <h1>二分查找</h1>
+    <p>在已经排好序的序列里，每次只看中点，然后丢掉不可能包含目标的那一半。选一个变体，点一个数作为目标，再一步一步往下走。</p>
+    <p lang="en">In a sorted sequence, each step looks at the midpoint and discards the half that cannot hold the target. Choose a variant, pick a target, and walk the search one step at a time.</p>
+    <nav aria-label="变体">
+        <ul>
+            <li><a href="/binary-search/sorted-array">有序数组 Sorted array</a></li>
+            <li><a href="/binary-search/sorted-array-with-duplicate">含重复 Duplicates</a></li>
+            <li><a href="/binary-search/rotated-sorted-array">旋转 Rotated</a></li>
+            <li><a href="/binary-search/rotated-sorted-array-with-duplicate">旋转且重复 Rotated, duplicates</a></li>
+        </ul>
+    </nav>
+    <p class="static-note">逐步动画需要 JavaScript。上面的链接不需要。</p>
+    <p class="static-note" lang="en">The step-through needs JavaScript. The links above do not.</p>
+</article>
+<!--/seo:intro-->
 <div id="root"></div>
 <script src="/src/main.jsx" type="module"></script>
 </body>

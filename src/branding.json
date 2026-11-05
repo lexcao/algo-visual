@@ -1,0 +1,21 @@
+{
+  "name": "Algo-Visual",
+  "tagline": "把二分查找的每一步摊开",
+  "taglineEn": "Binary search, one step at a time",
+  "siteUrl": "https://algo.lexcao.io",
+  "locale": "zh-CN",
+  "themeColor": "#1A1410",
+  "iconVersion": "1",
+  "icons": {
+    "favicon": "/favicon.ico",
+    "png16": "/favicon-16.png",
+    "png32": "/favicon-32.png",
+    "apple": "/apple-touch-icon.png",
+    "og": "/og.png"
+  },
+  "palette": {
+    "lacquer": "#1A1410",
+    "bone": "#F3EEE6",
+    "cinnabar": "#8E2A22"
+  }
+}

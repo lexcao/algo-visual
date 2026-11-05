@@ -1,0 +1,433 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T16:29:37Z",
+  "title": "Design System: Algo-Visual",
+  "extensions": {
+    "colorMeta": {
+      "cinnabar": {
+        "role": "primary",
+        "displayName": "Cinnabar",
+        "canonical": "#8E2A22",
+        "tonalRamp": [
+          "oklch(15% 0.136 28.5)",
+          "oklch(26.4% 0.136 28.5)",
+          "oklch(37.9% 0.136 28.5)",
+          "oklch(49.3% 0.136 28.5)",
+          "oklch(60.7% 0.136 28.5)",
+          "oklch(72.1% 0.136 28.5)",
+          "oklch(83.6% 0.136 28.5)",
+          "oklch(95% 0.136 28.5)"
+        ]
+      },
+      "cinnabar-deep": {
+        "role": "primary",
+        "displayName": "Cinnabar Deep",
+        "canonical": "#731F19",
+        "tonalRamp": [
+          "oklch(15% 0.119 28.3)",
+          "oklch(26.4% 0.119 28.3)",
+          "oklch(37.9% 0.119 28.3)",
+          "oklch(49.3% 0.119 28.3)",
+          "oklch(60.7% 0.119 28.3)",
+          "oklch(72.1% 0.119 28.3)",
+          "oklch(83.6% 0.119 28.3)",
+          "oklch(95% 0.119 28.3)"
+        ]
+      },
+      "mark": {
+        "role": "primary",
+        "displayName": "Cinnabar Wash",
+        "canonical": "#F6D5CE",
+        "tonalRamp": [
+          "oklch(15% 0.038 32)",
+          "oklch(26.4% 0.038 32)",
+          "oklch(37.9% 0.038 32)",
+          "oklch(49.3% 0.038 32)",
+          "oklch(60.7% 0.038 32)",
+          "oklch(72.1% 0.038 32)",
+          "oklch(83.6% 0.038 32)",
+          "oklch(95% 0.038 32)"
+        ]
+      },
+      "selection": {
+        "role": "primary",
+        "displayName": "Selection Wash",
+        "canonical": "#F0C7C0",
+        "tonalRamp": [
+          "oklch(15% 0.048 29.4)",
+          "oklch(26.4% 0.048 29.4)",
+          "oklch(37.9% 0.048 29.4)",
+          "oklch(49.3% 0.048 29.4)",
+          "oklch(60.7% 0.048 29.4)",
+          "oklch(72.1% 0.048 29.4)",
+          "oklch(83.6% 0.048 29.4)",
+          "oklch(95% 0.048 29.4)"
+        ]
+      },
+      "lacquer": {
+        "role": "neutral",
+        "displayName": "Lacquer",
+        "canonical": "#1A1410",
+        "tonalRamp": [
+          "oklch(15% 0.013 55.5)",
+          "oklch(26.4% 0.013 55.5)",
+          "oklch(37.9% 0.013 55.5)",
+          "oklch(49.3% 0.013 55.5)",
+          "oklch(60.7% 0.013 55.5)",
+          "oklch(72.1% 0.013 55.5)",
+          "oklch(83.6% 0.013 55.5)",
+          "oklch(95% 0.013 55.5)"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#F3EEE6",
+        "tonalRamp": [
+          "oklch(15% 0.012 79.8)",
+          "oklch(26.4% 0.012 79.8)",
+          "oklch(37.9% 0.012 79.8)",
+          "oklch(49.3% 0.012 79.8)",
+          "oklch(60.7% 0.012 79.8)",
+          "oklch(72.1% 0.012 79.8)",
+          "oklch(83.6% 0.012 79.8)",
+          "oklch(95% 0.012 79.8)"
+        ]
+      },
+      "bone-raised": {
+        "role": "neutral",
+        "displayName": "Raised Bone",
+        "canonical": "#FBF8F3",
+        "tonalRamp": [
+          "oklch(15% 0.007 80.7)",
+          "oklch(26.4% 0.007 80.7)",
+          "oklch(37.9% 0.007 80.7)",
+          "oklch(49.3% 0.007 80.7)",
+          "oklch(60.7% 0.007 80.7)",
+          "oklch(72.1% 0.007 80.7)",
+          "oklch(83.6% 0.007 80.7)",
+          "oklch(95% 0.007 80.7)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1A1410",
+        "tonalRamp": [
+          "oklch(15% 0.013 55.5)",
+          "oklch(26.4% 0.013 55.5)",
+          "oklch(37.9% 0.013 55.5)",
+          "oklch(49.3% 0.013 55.5)",
+          "oklch(60.7% 0.013 55.5)",
+          "oklch(72.1% 0.013 55.5)",
+          "oklch(83.6% 0.013 55.5)",
+          "oklch(95% 0.013 55.5)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#3F362F",
+        "tonalRamp": [
+          "oklch(15% 0.018 60)",
+          "oklch(26.4% 0.018 60)",
+          "oklch(37.9% 0.018 60)",
+          "oklch(49.3% 0.018 60)",
+          "oklch(60.7% 0.018 60)",
+          "oklch(72.1% 0.018 60)",
+          "oklch(83.6% 0.018 60)",
+          "oklch(95% 0.018 60)"
+        ]
+      },
+      "ink-quiet": {
+        "role": "neutral",
+        "displayName": "Quiet Ink",
+        "canonical": "#5C534A",
+        "tonalRamp": [
+          "oklch(15% 0.019 67.3)",
+          "oklch(26.4% 0.019 67.3)",
+          "oklch(37.9% 0.019 67.3)",
+          "oklch(49.3% 0.019 67.3)",
+          "oklch(60.7% 0.019 67.3)",
+          "oklch(72.1% 0.019 67.3)",
+          "oklch(83.6% 0.019 67.3)",
+          "oklch(95% 0.019 67.3)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#DDD4C8",
+        "tonalRamp": [
+          "oklch(15% 0.019 75.3)",
+          "oklch(26.4% 0.019 75.3)",
+          "oklch(37.9% 0.019 75.3)",
+          "oklch(49.3% 0.019 75.3)",
+          "oklch(60.7% 0.019 75.3)",
+          "oklch(72.1% 0.019 75.3)",
+          "oklch(83.6% 0.019 75.3)",
+          "oklch(95% 0.019 75.3)"
+        ]
+      },
+      "bone-dim": {
+        "role": "neutral",
+        "displayName": "Dim Bone",
+        "canonical": "#E4D5C6",
+        "tonalRamp": [
+          "oklch(15% 0.026 67.5)",
+          "oklch(26.4% 0.026 67.5)",
+          "oklch(37.9% 0.026 67.5)",
+          "oklch(49.3% 0.026 67.5)",
+          "oklch(60.7% 0.026 67.5)",
+          "oklch(72.1% 0.026 67.5)",
+          "oklch(83.6% 0.026 67.5)",
+          "oklch(95% 0.026 67.5)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Chinese page title. Serif, 600, clamp(1.75rem, 3vw, 2.5rem). 1.25rem at the 720px breakpoint."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles. Serif, 600, 1.55rem. English companion is sans at 0.95rem in soft ink."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "The brand name. Serif, 600, 1.35rem, letter-spacing -0.03em."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "UI copy. Sans, 400, 1.0625rem, line-height 1.55, palt. Reading text stops at 68ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Low, mid, and high marks under a cell. Sans, 600, 0.75rem, letter-spacing 0.04em."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "In-range cell numbers. Sans, 600, tabular, clamp(1.15rem, 3vw, 2.5rem)."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Source block only. JetBrains Mono, 400, 0.92rem, line-height 1.65."
+      }
+    },
+    "shadows": [
+      {
+        "name": "nav-current",
+        "value": "inset 0 -2px 0 #8E2A22",
+        "purpose": "Underline on the open variant in the lacquer bar."
+      },
+      {
+        "name": "target-ring",
+        "value": "inset 0 0 0 2px #1A1410",
+        "purpose": "Ring on a target cell that is not the midpoint."
+      },
+      {
+        "name": "target-ring-on-mid",
+        "value": "inset 0 0 0 2px #F3EEE6",
+        "purpose": "Ring on a target cell that is also the midpoint."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The only easing curve. The span, the cells, and the buttons use it."
+      },
+      {
+        "name": "duration-span",
+        "value": "520ms",
+        "purpose": "Left, width, and top of the measured span."
+      },
+      {
+        "name": "duration-press",
+        "value": "160ms",
+        "purpose": "Cell lift, button color, and button press."
+      },
+      {
+        "name": "duration-cell-color",
+        "value": "280ms",
+        "purpose": "Cell background, text, and border when the range changes."
+      },
+      {
+        "name": "duration-reduced",
+        "value": "0ms",
+        "purpose": "prefers-reduced-motion removes the span, cell, and button transitions and cancels the lift and press transforms."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one filled step action: 开始, 下一步, or the index start link.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">下一步</button>",
+      "css": ".ds-btn-primary { appearance: none; font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-weight: 600; font-size: 1.0625rem; min-height: 44px; min-width: 7.5rem; padding: 0 18px; border-radius: 4px; cursor: pointer; background: var(--cinnabar, #8E2A22); color: var(--bone, #F3EEE6); border: 1px solid var(--cinnabar, #8E2A22); transition: background-color 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), border-color 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), transform 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }\n.ds-btn-primary:hover:not(:disabled) { background: var(--cinnabar-deep, #731F19); border-color: var(--cinnabar-deep, #731F19); }\n.ds-btn-primary:active:not(:disabled) { transform: translateY(1px); }\n.ds-btn-primary:focus-visible { outline: 2px solid var(--cinnabar, #8E2A22); outline-offset: 3px; }\n.ds-btn-primary:disabled { background: var(--lacquer, #1A1410); border-color: var(--lacquer, #1A1410); color: var(--bone, #F3EEE6); cursor: default; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The reset control. The only button beside the primary.",
+      "html": "<button class=\"ds-btn-ghost\" type=\"button\">重置</button>",
+      "css": ".ds-btn-ghost { appearance: none; font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-weight: 600; font-size: 1.0625rem; min-height: 44px; padding: 0 18px; border-radius: 4px; cursor: pointer; background: transparent; color: var(--ink, #1A1410); border: 1px solid #C9BFB2; transition: background-color 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), border-color 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), transform 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }\n.ds-btn-ghost:hover { background: #E9E2D8; }\n.ds-btn-ghost:active { transform: translateY(1px); }\n.ds-btn-ghost:focus-visible { outline: 2px solid var(--cinnabar, #8E2A22); outline-offset: 3px; }"
+    },
+    {
+      "name": "Header Nav",
+      "kind": "nav",
+      "refersTo": "nav-current",
+      "description": "Full-bleed lacquer bar. The current variant is an inset cinnabar underline.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-brand\" href=\"#\">Algo-Visual</a><nav class=\"ds-nav\" aria-label=\"变体\"><a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\"><span>有序</span><span class=\"ds-nav-en\" lang=\"en\">Sorted</span></a><a class=\"ds-nav-link\" href=\"#\"><span>含重复</span><span class=\"ds-nav-en\" lang=\"en\">Duplicates</span></a></nav></header>",
+      "css": ".ds-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; padding: 0 24px; background: var(--lacquer, #1A1410); color: var(--bone, #F3EEE6); }\n.ds-brand { color: var(--bone, #F3EEE6); text-decoration: none; font-family: \"Noto Serif SC\", \"Songti SC\", \"Noto Serif\", serif; font-weight: 600; font-size: 1.35rem; letter-spacing: -0.03em; line-height: 1; }\n.ds-nav { display: flex; gap: 4px 22px; }\n.ds-nav-link { color: var(--bone, #F3EEE6); text-decoration: none; font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-size: 0.95rem; line-height: 1.2; padding: 8px 0; box-shadow: inset 0 -2px 0 transparent; }\n.ds-nav-link[aria-current=\"page\"] { box-shadow: inset 0 -2px 0 var(--cinnabar, #8E2A22); }\n.ds-nav-en { display: block; margin-top: 2px; color: #E4D5C6; font-size: 0.75rem; letter-spacing: 0.01em; }\n.ds-top :focus-visible { outline: 2px solid var(--bone, #F3EEE6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Array Cell",
+      "kind": "custom",
+      "refersTo": "cell",
+      "description": "A square in-range value. The second cell shows the target ring.",
+      "html": "<div class=\"ds-cells\"><button class=\"ds-cell\" type=\"button\">4</button><button class=\"ds-cell ds-cell-target\" type=\"button\" aria-pressed=\"true\">7</button></div>",
+      "css": ".ds-cells { display: flex; gap: 8px; }\n.ds-cell { width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; border: 1px solid #D5CBBD; border-radius: 3px; background: var(--bone-raised, #FBF8F3); color: var(--ink, #1A1410); font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-size: 1.75rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; padding: 0; cursor: pointer; transition: transform 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), background-color 280ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), color 280ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), border-color 280ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }\n.ds-cell:hover:not(:disabled) { transform: translateY(-2px); }\n.ds-cell:active:not(:disabled) { transform: translateY(0); }\n.ds-cell:focus-visible { outline: 2px solid var(--cinnabar, #8E2A22); outline-offset: 3px; }\n.ds-cell-target { box-shadow: inset 0 0 0 2px var(--ink, #1A1410); }"
+    },
+    {
+      "name": "Midpoint Cell",
+      "kind": "custom",
+      "refersTo": "cell-mid",
+      "description": "The live midpoint. Cinnabar fill, bone figure.",
+      "html": "<button class=\"ds-mid\" type=\"button\">5</button>",
+      "css": ".ds-mid { width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--cinnabar, #8E2A22); border-radius: 3px; background: var(--cinnabar, #8E2A22); color: var(--bone, #F3EEE6); font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-size: 1.75rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; padding: 0; cursor: pointer; transition: transform 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }\n.ds-mid:hover { transform: translateY(-2px); }\n.ds-mid:focus-visible { outline: 2px solid var(--cinnabar, #8E2A22); outline-offset: 3px; }"
+    },
+    {
+      "name": "Discarded Cell",
+      "kind": "custom",
+      "refersTo": "cell-discarded",
+      "description": "A value outside the live range. No fill, no border, quiet ink, regular sans weight.",
+      "html": "<button class=\"ds-out\" type=\"button\">1</button>",
+      "css": ".ds-out { width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; border: 1px solid transparent; border-radius: 3px; background: transparent; color: var(--ink-quiet, #5C534A); font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-size: 1.75rem; font-weight: 400; font-variant-numeric: tabular-nums; line-height: 1; padding: 0; cursor: pointer; transition: transform 160ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }\n.ds-out:hover:not(:disabled) { transform: translateY(-2px); }\n.ds-out:focus-visible { outline: 2px solid var(--cinnabar, #8E2A22); outline-offset: 3px; }"
+    },
+    {
+      "name": "Measured Span",
+      "kind": "custom",
+      "refersTo": "span",
+      "description": "Cinnabar bar and end ticks, placed from the low and high cell boxes.",
+      "html": "<div class=\"ds-track\"><div class=\"ds-span\"></div><div class=\"ds-wrap\"><div class=\"ds-sq\">2</div><div class=\"ds-marks\"><span class=\"ds-mark\">低</span></div></div><div class=\"ds-wrap\"><div class=\"ds-sq ds-sq-mid\">5</div><div class=\"ds-marks\"><span class=\"ds-mark ds-mark-mid\">中</span></div></div><div class=\"ds-wrap\"><div class=\"ds-sq\">9</div><div class=\"ds-marks\"><span class=\"ds-mark\">高</span></div></div></div>",
+      "css": ".ds-track { position: relative; display: grid; grid-template-columns: repeat(3, 64px); column-gap: 8px; width: max-content; }\n.ds-span { position: absolute; z-index: 0; pointer-events: none; height: 3px; border-radius: 2px; background: var(--cinnabar, #8E2A22); top: 72px; left: 0; width: 100%; transition: left 520ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), width 520ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), top 520ms var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }\n.ds-span::before, .ds-span::after { content: \"\"; position: absolute; top: -4px; width: 2px; height: 11px; background: var(--cinnabar, #8E2A22); }\n.ds-span::before { left: 0; }\n.ds-span::after { right: 0; }\n.ds-wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; }\n.ds-sq { width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border: 1px solid #D5CBBD; border-radius: 3px; background: var(--bone-raised, #FBF8F3); color: var(--ink, #1A1410); font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-size: 1.5rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1; }\n.ds-sq-mid { background: var(--cinnabar, #8E2A22); border-color: var(--cinnabar, #8E2A22); color: var(--bone, #F3EEE6); }\n.ds-marks { min-height: 1.15rem; }\n.ds-mark { font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; line-height: 1.1; color: var(--ink, #1A1410); }\n.ds-mark-mid { color: var(--cinnabar, #8E2A22); }"
+    },
+    {
+      "name": "Code Block",
+      "kind": "custom",
+      "refersTo": "code-current",
+      "description": "Mono source on raised bone. The current line is the cinnabar wash; keywords and its line number are cinnabar.",
+      "html": "<pre class=\"ds-code\"><code><span class=\"ds-line\"><span class=\"ds-ln\">1</span><span class=\"ds-src\"><span class=\"ds-key\">function</span> search(nums, target) {</span></span><span class=\"ds-line ds-line-current\"><span class=\"ds-ln\">2</span><span class=\"ds-src\">  <span class=\"ds-key\">const</span> mid = l + (h - l) / 2</span></span><span class=\"ds-line\"><span class=\"ds-ln\">3</span><span class=\"ds-src\">}</span></span></code></pre>",
+      "css": ".ds-code { margin: 0; background: var(--bone-raised, #FBF8F3); border: 1px solid var(--line, #DDD4C8); border-radius: 4px; font-family: \"JetBrains Mono\", \"Noto Sans Mono\", ui-monospace, monospace; font-size: 0.92rem; line-height: 1.65; overflow-x: auto; }\n.ds-line { display: grid; grid-template-columns: 3rem minmax(0, max-content); min-height: 1.65em; padding-right: 16px; }\n.ds-line-current { background: var(--mark, #F6D5CE); }\n.ds-ln { text-align: right; padding-right: 14px; color: var(--ink-quiet, #5C534A); font-variant-numeric: tabular-nums; }\n.ds-line-current .ds-ln { color: var(--cinnabar, #8E2A22); }\n.ds-src { white-space: pre; color: var(--ink, #1A1410); }\n.ds-key { color: var(--cinnabar, #8E2A22); }"
+    },
+    {
+      "name": "Variant Row",
+      "kind": "custom",
+      "refersTo": "variant-row",
+      "description": "One row of the divided variant index: Chinese name, English name, and the array.",
+      "html": "<a class=\"ds-variant\" href=\"#\"><span class=\"ds-v-name\"><span class=\"ds-v-zh\">有序数组</span><span class=\"ds-v-en\" lang=\"en\">Sorted array</span></span><span class=\"ds-seq\">1 3 5 7 9</span></a>",
+      "css": ".ds-variant { display: grid; grid-template-columns: minmax(140px, 200px) minmax(0, 1fr); gap: 12px 20px; align-items: center; padding: 20px 8px; border-top: 1px solid var(--line, #DDD4C8); border-bottom: 1px solid var(--line, #DDD4C8); color: var(--ink, #1A1410); text-decoration: none; font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; background: var(--bone, #F3EEE6); }\n.ds-variant:hover { background: #E7E0D4; }\n.ds-variant:focus-visible { outline: 2px solid var(--cinnabar, #8E2A22); outline-offset: 3px; }\n.ds-v-zh { display: block; font-weight: 600; font-size: 1.15rem; }\n.ds-v-en { display: block; margin-top: 2px; color: var(--ink-soft, #3F362F); font-size: 0.9rem; }\n.ds-seq { font-variant-numeric: tabular-nums; font-weight: 600; letter-spacing: 0.04em; font-size: 1.05rem; }"
+    },
+    {
+      "name": "Step Tally",
+      "kind": "custom",
+      "refersTo": "tally",
+      "description": "The tabular step count beside its unit, always visible on the control row.",
+      "html": "<p class=\"ds-tally\"><span class=\"ds-tally-k\">步</span><span class=\"ds-tally-n\">3</span></p>",
+      "css": ".ds-tally { margin: 0; display: flex; align-items: baseline; gap: 8px; font-family: \"Noto Sans SC\", \"PingFang SC\", \"Noto Sans\", sans-serif; color: var(--ink, #1A1410); }\n.ds-tally-k { color: var(--ink-soft, #3F362F); font-size: 0.8rem; letter-spacing: 0.08em; }\n.ds-tally-n { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 1.65rem; letter-spacing: -0.04em; line-height: 1; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Suanpan Span",
+    "overview": "Algo-Visual is a study surface: a lacquer shell over a bone page, with cinnabar as the only accent. The accent fills the midpoint and the measured span, and it fills the one primary button. The same red marks whatever is current: the nav underline, the code-line number, the trace index, the caret, and the focus ring. Low and high stay ink. A cell outside the range drops to one quiet tone.\n\nChinese is the primary line. Noto Serif SC carries the brand, the page title, and the section titles. Noto Sans SC carries the UI, including the English line set under each serif title. JetBrains Mono is loaded for the code block and for nothing else. The page is one left-aligned column. Reading text holds to 68ch. The array is the working object, and the status sentence and the buttons sit directly under it.\n\nThe material is flat. Depth is the lacquer bar on bone, raised bone on the cells and the code block, and hairline rules between list rows. Corners stay short. The signature is the span: a cinnabar bar with end ticks, positioned from the live low and high cell boxes, easing closed when a bound moves. prefers-reduced-motion cuts that transition. The name is set in the serif. There is no logo and no cast shadow.",
+    "keyCharacteristics": [
+      "Lacquer header, bone page, cinnabar as the only accent",
+      "Serif Chinese titles, sans UI, mono kept inside the code block",
+      "Low and high marks in ink; discarded cells in one quiet tone",
+      "A span measured from the live cell boxes",
+      "Flat surfaces, hairline rules, inset marks for the current item and the target",
+      "One filled button, with reset as a ghost"
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Cinnabar is the only accent. It fills the midpoint, the span, and the primary button, and it marks the current nav underline, the current code-line number, keyword tokens, the trace index, the caret, and the focus ring. Low and high marks stay ink. The code-line wash and text selection are tints of the same red, not new hues.",
+        "section": "colors"
+      },
+      {
+        "name": "The Shared Pigment Rule",
+        "body": "Lacquer and ink are one value. The header, the disabled primary, body text, and the low and high marks all use it. A second near-black does not belong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Quiet Discard Rule",
+        "body": "A cell outside the live range loses its fill and its border and is set in quiet ink. It does not take a hue of its own.",
+        "section": "colors"
+      },
+      {
+        "name": "The Serif Title Rule",
+        "body": "Noto Serif SC is the brand, the Chinese page title, and section titles. The English line paired with each of those is Noto Sans SC in soft ink. The rest of the UI is the sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Fence Rule",
+        "body": "JetBrains Mono appears only inside the code block. Cell figures, the step count, bounds, and trace indexes use the sans with tabular numbers.",
+        "section": "typography"
+      },
+      {
+        "name": "The Single Column Rule",
+        "body": "One left-aligned column, `min(1120px, calc(100% - 48px))`, with reading text at 68ch. The lacquer header is the only full-bleed band.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Mark Rule",
+        "body": "No cast shadow. Depth is lacquer on bone, raised bone on cells and code, and the cinnabar wash on the current code line. Inset rules mark the current nav item and the target cell. Hover lifts a cell by 2px and does not grow a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Short Corner Rule",
+        "body": "Radius stays at 2px on the span and the legend swatches, 3px on cells, and 4px on buttons and the code block. Cells are squares.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Measured Span Rule",
+        "body": "Left, width, and top come from the low and high cell boxes: left at the low cell's left, width through the high cell's right, top 8px below the cell bottom. Those three ease over 520ms with cubic-bezier(0.16, 1, 0.3, 1). prefers-reduced-motion removes the transition.",
+        "section": "components"
+      },
+      {
+        "name": "The Single Primary Rule",
+        "body": "The step action is the one filled cinnabar button. Reset is the ghost. The found state keeps the button and disables it to lacquer. Below 720px both buttons are full width and 48px tall.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do keep the page bone and the app header lacquer, and use that same value for ink.",
+      "Do fill the midpoint and the measured span with cinnabar, and keep the low and high marks in ink.",
+      "Do clear the fill and the border of a discarded cell and set its figure in quiet ink.",
+      "Do position the span from the live cell boxes, 8px below the cell bottom, and ease left, width, and top over 520ms unless reduced motion is requested.",
+      "Do set Chinese titles in Noto Serif SC and the UI in Noto Sans SC, and keep JetBrains Mono inside the code block.",
+      "Do use one filled cinnabar button for the step and a ghost button for reset.",
+      "Do draw focus as a 2px outline offset 3px, cinnabar on bone and bone on the lacquer header."
+    ],
+    "donts": [
+      "Don't add an accent that is not cinnabar or a wash of it.",
+      "Don't paint the low or high marks in cinnabar.",
+      "Don't give a discarded cell a fill, a border, or a hue of its own.",
+      "Don't cast a drop shadow. Inset rules are reserved for the current nav item and the target ring.",
+      "Don't set interface text, figures, or counts in JetBrains Mono.",
+      "Don't place a second filled button beside the primary.",
+      "Don't size the span from a column index. It follows the measured cell boxes."
+    ]
+  }
+}

@@ -54,5 +54,11 @@ const onNextRound = (pos, updatePos, step, setStep, t) => {
 }
 
 export default {
-  id, name, code, nums, onNextRound
+  id, name, code, nums, onNextRound,
+  roles: {
+    pick: Lines.Assign_M,
+    low: Lines.Update_L,
+    high: Lines.Update_H,
+    found: Lines.Return_M
+  }
 }

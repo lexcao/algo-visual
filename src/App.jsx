@@ -1,22 +1,24 @@
 import React from 'react'
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import Shell, { Missing } from './components/Shell'
 import BinarySearch from './binary-search/index'
 
-export default () => {
-
+export default function App () {
   return (
-    <main className="bg-gray-50 w-screen w-screen">
-      <Router>
-        <Switch>
-          <Route path="/binary-search">
-            <BinarySearch/>
-          </Route>
-
-          <Route exact path="/">
-            <Redirect to="/binary-search"/>
-          </Route>
-        </Switch>
-      </Router>
-    </main>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/binary-search"/>
+        </Route>
+        <Route path="/binary-search">
+          <BinarySearch/>
+        </Route>
+        <Route>
+          <Shell>
+            <Missing/>
+          </Shell>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   )
 }
