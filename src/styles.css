@@ -2,37 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@font-face {
-  font-family: "Noto Sans SC";
-  src: url("/fonts/noto-sans-sc-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Noto Sans SC";
-  src: url("/fonts/noto-sans-sc-600.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Noto Serif SC";
-  src: url("/fonts/noto-serif-sc-600.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  src: url("/fonts/jetbrains-mono-400.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+@import "./font-faces.generated.css";
 
 :root {
   --lacquer: #1A1410;

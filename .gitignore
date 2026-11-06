@@ -5,3 +5,7 @@ dist
 dist-ssr
 *.local
 .idea/
+
+# Full CJK sources downloaded by npm run fonts
+scripts/font-src/
+.venv/
