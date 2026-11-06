@@ -43,7 +43,14 @@ export default function Shell ({ children }) {
       <a className="skip" href="#work">跳到内容</a>
       <header className="top">
         <div className="top-inner">
-          <Link className="brand" to="/binary-search">{branding.name}</Link>
+          <Link className="brand" to="/binary-search" aria-label={branding.name}>
+            {branding.name.split('·').map((part, i) => (
+              <span key={i}>
+                {i > 0 ? <span className="brand-dot" aria-hidden="true">·</span> : null}
+                {part}
+              </span>
+            ))}
+          </Link>
           <nav className="nav" aria-label="算法">
             {algorithms.map(item => (
               <Link

@@ -116,6 +116,7 @@ export function headBlock (route, { robots = 'index,follow', canonicalLink = tru
     `<meta name="twitter:description" content="${esc(route.summary)}"/>`,
     `<meta name="twitter:image" content="${esc(image)}"/>`,
     `<link rel="icon" href="${branding.icons.favicon}?v=${v}" sizes="any"/>`,
+    branding.icons.svg ? `<link rel="icon" type="image/svg+xml" href="${branding.icons.svg}?v=${v}"/>` : '',
     `<link rel="icon" type="image/png" href="${branding.icons.png32}?v=${v}" sizes="32x32"/>`,
     `<link rel="icon" type="image/png" href="${branding.icons.png16}?v=${v}" sizes="16x16"/>`,
     `<link rel="apple-touch-icon" href="${branding.icons.apple}?v=${v}"/>`,

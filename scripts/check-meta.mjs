@@ -113,6 +113,14 @@ else {
   if (buf.includes(Buffer.from('<html'))) fail('favicon.ico is HTML')
 }
 
+const svgIcon = path.join(dist, 'favicon.svg')
+if (!fs.existsSync(svgIcon)) fail('missing favicon.svg')
+else {
+  const text = fs.readFileSync(svgIcon, 'utf8')
+  if (!/<svg[\s>]/i.test(text)) fail('favicon.svg is not SVG')
+  if (/<html[\s>]/i.test(text)) fail('favicon.svg is HTML')
+}
+
 function walk (dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name)

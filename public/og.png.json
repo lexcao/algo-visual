@@ -1,8 +1,13 @@
 {
   "generator": "scripts/generate-brand-assets.mjs",
-  "reads": "src/branding.json",
-  "note": "Neutral placeholder mark and OG template. Not a finished logo. Text is the configured name, tagline, and host.",
-  "name": "Algo-Visual",
-  "tagline": "把算法的每一步摊开",
-  "taglineEn": "Algorithms, one step at a time"
+  "reads": [
+    "src/branding.json",
+    "scripts/brand-marks/favicon-32.svg",
+    "scripts/brand-marks/favicon-180.svg"
+  ],
+  "note": "Lettermark favicon is a + cinnabar dot (algo·pace). OG is generated from branding.json.",
+  "name": "algo·pace",
+  "tagline": "按自己的节奏走算法",
+  "taglineEn": "Walk algorithms at your own pace",
+  "iconVersion": "2"
 }
