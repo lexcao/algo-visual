@@ -1,0 +1,39 @@
+{
+  "generator": "scripts/generate-font-subset.mjs",
+  "fontVersion": "3",
+  "charCount": 402,
+  "hanCount": 324,
+  "chars": "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz·×–—“”…→、。「」一上下不与且丢两个中为之了二于交亮仍从他代以们份优会位低住体何作使例侧值偏停先入其内再冒决准减出击分切划列则到制前剩加动包化区升半单去参又双发取变口只可右号各同后向含和哪四回围固在地址均坏墙增处备复外多大太头奏好如始子字存它完定宫容对小就尾居展左己已常平并广序应底度开式归当录往必快恢慢成或所扩找把护拆择拿指按挑挪换掉排接控提搜摊播改放数整断新方旋时明映是暂更最有未末机杂束条来极果枢某查标栈样格次正步段每比求沉没沿法泡深滑演点然片现理用画界留的盘目直相看着短码确示离移空窗端第等算索约组终经结继续维网罩置能自节范落行衡被要规角认记设话说请调贴走起超趟路跳转轴较输边达过返还这进连迷退逆选逐递逗速遇遍那邻都里重针链键长间队降除随隔需面页项顺须额骤高，：；",
+  "outputs": [
+    {
+      "family": "Noto Sans SC",
+      "weight": 400,
+      "woff2": "noto-sans-sc-400-v3.woff2",
+      "ttf": "noto-sans-sc-400-v3.ttf",
+      "bytes": {
+        "woff2": 91000,
+        "ttf": 121428
+      }
+    },
+    {
+      "family": "Noto Sans SC",
+      "weight": 600,
+      "woff2": "noto-sans-sc-600-v3.woff2",
+      "ttf": "noto-sans-sc-600-v3.ttf",
+      "bytes": {
+        "woff2": 92508,
+        "ttf": 124500
+      }
+    },
+    {
+      "family": "Noto Serif SC",
+      "weight": 600,
+      "woff2": "noto-serif-sc-600-v3.woff2",
+      "ttf": "noto-serif-sc-600-v3.ttf",
+      "bytes": {
+        "woff2": 130880,
+        "ttf": 176540
+      }
+    }
+  ]
+}

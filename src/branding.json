@@ -1,6 +1,6 @@
 {
   "name": "algo·pace",
-  "tagline": "一步一步走算法",
+  "tagline": "按自己的节奏走算法",
   "taglineEn": "Walk algorithms at your own pace",
   "siteUrl": "https://algo.lexcao.io",
   "locale": "zh-CN",
@@ -18,5 +18,6 @@
     "lacquer": "#1A1410",
     "bone": "#F3EEE6",
     "cinnabar": "#8E2A22"
-  }
+  },
+  "fontVersion": "3"
 }
