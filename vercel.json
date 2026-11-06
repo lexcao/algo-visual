@@ -29,6 +29,26 @@
       "headers": { "cache-control": "public, max-age=0, must-revalidate" },
       "dest": "/binary-search/$1/index.html"
     },
+    {
+      "src": "/sorting/(bubble-sort|quick-sort)/?",
+      "headers": { "cache-control": "public, max-age=0, must-revalidate" },
+      "dest": "/sorting/$1/index.html"
+    },
+    {
+      "src": "/graph/grid-search/?",
+      "headers": { "cache-control": "public, max-age=0, must-revalidate" },
+      "dest": "/graph/grid-search/index.html"
+    },
+    {
+      "src": "/two-pointers/?",
+      "headers": { "cache-control": "public, max-age=0, must-revalidate" },
+      "dest": "/two-pointers/index.html"
+    },
+    {
+      "src": "/sliding-window/?",
+      "headers": { "cache-control": "public, max-age=0, must-revalidate" },
+      "dest": "/sliding-window/index.html"
+    },
     { "handle": "filesystem" },
     {
       "src": "/(.*)",

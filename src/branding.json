@@ -1,7 +1,7 @@
 {
   "name": "Algo-Visual",
-  "tagline": "把二分查找的每一步摊开",
-  "taglineEn": "Binary search, one step at a time",
+  "tagline": "把算法的每一步摊开",
+  "taglineEn": "Algorithms, one step at a time",
   "siteUrl": "https://algo.lexcao.io",
   "locale": "zh-CN",
   "themeColor": "#1A1410",

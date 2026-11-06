@@ -8,30 +8,30 @@ web
 
 ## Users
 
-Inferred from the brief and the existing app: people studying binary search, often in Chinese and English, who open a single page to watch the algorithm halve a range. They pick a target, step forward, and read which line of code just ran. Success is understanding low, mid, and high on one concrete array, including the duplicate and rotated variants.
+People studying an algorithm, often in Chinese and English, who open one page to watch it run on a concrete input. For binary search they pick a target and step. For the later pages they edit the input, then play, pause, or step, and read which line of code just ran.
 
 ## Product Purpose
 
-Algo-Visual shows binary search, and only binary search, as a step-through of a fixed array. The visitor chooses a variant, chooses a target, and advances one decision at a time while the matching source line is marked. Success is a correct, readable trace, not a catalog of algorithms.
+Algo-Visual shows one algorithm at a time as a step-through on a concrete input. Binary search is the home page and still has four variants. Bubble sort, quicksort, grid search (breadth-first and depth-first), two pointers, and a fixed-length sliding window use the same study surface: an editable input, one primary play control, and a sentence tied to the current source line. Success is a correct, readable trace.
 
 ## Positioning
 
-The mechanism is a shared clock: each press moves the pointers and highlights the exact source line that caused that move. Four variants (plain, duplicates, rotated, rotated with duplicates) share that clock. A generic algorithm encyclopedia could not claim this page without that coupling.
+The mechanism is a shared clock: each step moves the picture and highlights the source line that caused that move. Binary search still steps low, mid, and high. The newer pages play that same clock, with pause, single step, reset, and speed.
 
 ## Operating Context
 
-Public site at https://algo.lexcao.io/, Vite build deployed on Vercel, reached through Cloudflare. Visitors land on `/binary-search` or one of four variant URLs. Analytics already present: GTM-KJ277ZJ and GA4 G-YYYZVVWCBV. No accounts, no saved progress, no editor.
+Public site at https://algo.lexcao.io/, Vite build deployed on Vercel, reached through Cloudflare. `/` still redirects to `/binary-search`. That index links to every algorithm. Analytics already present: GTM-KJ277ZJ and GA4 G-YYYZVVWCBV. No accounts and no saved progress. The newer pages include an input for the sequence, target, window width, or maze.
 
 ## Capabilities and Constraints
 
 Confirmed:
 
-- Routes that exist today: `/` (redirects to `/binary-search`), `/binary-search`, `/binary-search/sorted-array`, `/binary-search/sorted-array-with-duplicate`, `/binary-search/rotated-sorted-array`, `/binary-search/rotated-sorted-array-with-duplicate`.
-- Arrays and step functions live in `src/binary-search/data/`. There is no content generator and no dataset. Do not add batch landing pages.
+- Routes: `/` (redirects to `/binary-search`), the four binary-search variant URLs, `/sorting/bubble-sort`, `/sorting/quick-sort`, `/graph/grid-search`, `/two-pointers`, `/sliding-window`.
+- Binary-search arrays and step functions stay in `src/binary-search/data/`. The newer step generators live in `src/algorithms/` and are pure functions. Do not add batch landing pages.
 - Stack stays Vite 2, React 17, react-router-dom 5, Tailwind 2 unless a build cannot proceed.
 - Name stays `Algo-Visual` until a later decision. Name, tagline, and icon paths live in one branding config. Favicon is a generated neutral placeholder. The OG image is generated from that config.
-- SEO required on the existing routes only: real `robots.txt` and `sitemap.xml`, description, canonical, a correct `lang`, per-route static HTML from a committed post-build script, a crawlable no-JS intro in Chinese and English, WebApplication JSON-LD, real 404s for unknown paths, no stray `console.log`.
-- A post-build HTML meta check is the test gate. The repo has no test runner.
+- SEO on every catalog route: `robots.txt` and `sitemap.xml`, description, canonical, `lang`, per-route static HTML from the post-build script, a crawlable no-JS intro in Chinese and English, WebApplication JSON-LD, real 404s for unknown paths, no stray `console.log`. The sitemap does not list the redirecting root.
+- `npm run build` runs the HTML meta check. `npm run test:unit` runs vitest on the step generators.
 - Preview is the Vercel preview for the pull request. Do not change Cloudflare, DNS, or zone settings. Do not merge.
 - `prefers-reduced-motion` must be respected.
 - Do not delete the leftover `CNAME` in this change; that file is out of scope.
@@ -58,4 +58,4 @@ The visible name is `Algo-Visual`. No logo is approved. Icon paths are configura
 
 ## Accessibility & Inclusion
 
-Keyboard access to start, step, and reset. Visible focus. Text contrast at least 4.5:1 for body copy. Reduced motion removes non-essential animation and keeps state changes instant and readable. The page is bilingual (Chinese and English) on every route.
+Keyboard access to start, step, and reset. On the newer pages, Space plays or pauses, Right Arrow steps, and R resets, unless focus is in a field. Visible focus. Text contrast at least 4.5:1 for body copy. Reduced motion removes non-essential animation and keeps state changes instant and readable. The page is bilingual (Chinese and English) on every route.

@@ -8,7 +8,8 @@
     "postinstall": "node node_modules/esbuild/install.js",
     "assets": "node scripts/generate-brand-assets.mjs",
     "build": "NODE_OPTIONS=--openssl-legacy-provider NODE_ENV=production vite build && node scripts/prerender-html.mjs && node scripts/check-meta.mjs",
-    "test": "node scripts/check-meta.mjs",
+    "test:unit": "vitest run --config vitest.config.mjs",
+    "test": "vitest run --config vitest.config.mjs && node scripts/check-meta.mjs",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -24,6 +25,7 @@
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.2",
-    "vite": "^2.3.7"
+    "vite": "^2.3.7",
+    "vitest": "^0.23.4"
   }
 }

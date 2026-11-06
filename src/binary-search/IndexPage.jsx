@@ -5,7 +5,8 @@ import data from './data/index'
 import NumsRow from './component/NumsRow'
 
 const indexRoute = catalog.routes.find(route => route.id === 'index')
-const variants = catalog.routes.filter(route => route.id !== 'index')
+const variants = catalog.routes.filter(route => route.family === 'binary-search' && route.id !== 'index')
+const others = catalog.routes.filter(route => route.family && route.family !== 'binary-search')
 
 export default function IndexPage () {
   const sample = data[0]
@@ -46,6 +47,24 @@ export default function IndexPage () {
             </li>
           )
         })}
+      </ul>
+
+      <h2 className="section-title" id="algorithms">其他算法 <span lang="en">Other algorithms</span></h2>
+      <ul className="variant-index">
+        {others.map(item => (
+          <li key={item.id}>
+            <Link to={item.path}>
+              <span className="v-name">
+                <span className="v-zh">{item.labelZh}</span>
+                <span className="v-en" lang="en">{item.labelEn}</span>
+              </span>
+              <span className="seq">{item.preview}</span>
+              <svg className="go" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+              </svg>
+            </Link>
+          </li>
+        ))}
       </ul>
     </article>
   )
