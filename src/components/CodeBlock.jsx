@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TOKEN = /\/\/.*|\b(?:function|const|let|if|else|while|return)\b|\b(?:Math|Number)\b|\b\d+\b/g
+const TOKEN = /\/\/.*|\b(?:function|const|let|if|else|while|for|return|break)\b|\b(?:Math|Number)\b|\b\d+\b/g
 
 function tokenize (line) {
   const parts = []
@@ -11,7 +11,7 @@ function tokenize (line) {
     if (match.index > last) parts.push({ kind: 'plain', text: line.slice(last, match.index) })
     const text = match[0]
     let kind = 'plain'
-    if (/^(?:function|const|let|if|else|while|return)$/.test(text)) kind = 'key'
+    if (/^(?:function|const|let|if|else|while|for|return|break)$/.test(text)) kind = 'key'
     else if (/^(?:Math|Number)$/.test(text)) kind = 'fn'
     else if (/^\d/.test(text)) kind = 'num'
     parts.push({ kind, text })

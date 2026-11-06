@@ -80,7 +80,7 @@ function jsonLd (route) {
       description: route.summary,
       inLanguage: ['zh-CN', 'en'],
       learningResourceType: 'interactive visualization',
-      teaches: 'Binary search',
+      teaches: route.teaches || 'Binary search',
       isAccessibleForFree: true,
       isPartOf: home
     })
@@ -127,7 +127,7 @@ export function introBlock (route) {
   const variants = catalog.routes.filter(item => item.id !== 'index')
   const links = variants.map(item => {
     const nums = readNums(item.id)
-    const preview = nums ? `：${nums.join(' ')}` : ''
+    const preview = nums ? `：${nums.join(' ')}` : item.preview ? `：${item.preview}` : ''
     return `            <li><a href="${item.path}">${esc(item.labelZh)} <span lang="en">${esc(item.labelEn)}</span>${esc(preview)}</a></li>`
   }).join('\n')
   const ownNums = readNums(route.id)
@@ -139,7 +139,7 @@ export function introBlock (route) {
     <h1>${esc(route.labelZh)} <span lang="en">${esc(route.labelEn)}</span></h1>
     <p>${esc(route.introZh)}</p>
     <p lang="en">${esc(route.introEn)}</p>${sample}
-    <nav aria-label="变体">
+    <nav aria-label="算法">
         <ul>
 ${links}
         </ul>
@@ -156,9 +156,9 @@ export function notFoundRoute () {
     titleSuffix: '页面不存在',
     labelZh: '页面不存在',
     labelEn: 'Page not found',
-    summary: '这个地址没有对应的二分查找页面。',
-    introZh: '这个地址没有对应的二分查找页面。',
-    introEn: 'This address does not match a binary-search page.'
+    summary: '这个地址没有对应的算法页面。',
+    introZh: '这个地址没有对应的算法页面。',
+    introEn: 'This address does not match an algorithm page.'
   }
 }
 

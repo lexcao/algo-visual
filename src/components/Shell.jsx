@@ -3,7 +3,19 @@ import { Link, useLocation } from 'react-router-dom'
 import branding from '../branding.json'
 import catalog from '../seo/catalog.json'
 
-const variants = catalog.routes.filter(route => route.id !== 'index')
+const algorithms = catalog.nav
+const variants = catalog.routes.filter(route => route.family === 'binary-search' && route.id !== 'index')
+
+export function normalizePath (pathname) {
+  if (pathname.length > 1 && pathname.endsWith('/')) return pathname.replace(/\/+$/, '')
+  return pathname
+}
+
+function navCurrent (item, pathname) {
+  const path = normalizePath(pathname)
+  if (item.prefix) return path === item.prefix || path.startsWith(item.prefix + '/')
+  return path === item.path
+}
 
 function applyMeta (route) {
   const title = route
@@ -19,7 +31,8 @@ function applyMeta (route) {
 
 export default function Shell ({ children }) {
   const { pathname } = useLocation()
-  const route = catalog.routes.find(item => item.path === pathname) || null
+  const path = normalizePath(pathname)
+  const route = catalog.routes.find(item => item.path === path) || null
 
   useEffect(() => {
     applyMeta(route)
@@ -31,12 +44,12 @@ export default function Shell ({ children }) {
       <header className="top">
         <div className="top-inner">
           <Link className="brand" to="/binary-search">{branding.name}</Link>
-          <nav className="nav" aria-label="变体">
-            {variants.map(item => (
+          <nav className="nav" aria-label="算法">
+            {algorithms.map(item => (
               <Link
                 key={item.id}
                 to={item.path}
-                aria-current={pathname === item.path ? 'page' : undefined}
+                aria-current={navCurrent(item, path) ? 'page' : undefined}
               >
                 <span>{item.labelZh}</span>
                 <span className="nav-en" lang="en">{item.labelEn}</span>
@@ -44,6 +57,24 @@ export default function Shell ({ children }) {
             ))}
           </nav>
         </div>
+        {path.startsWith('/binary-search') ? (
+          <div className="top-sub">
+            <div className="top-inner">
+              <nav className="subnav" aria-label="变体">
+                {variants.map(item => (
+                  <Link
+                    key={item.id}
+                    to={item.path}
+                    aria-current={path === item.path ? 'page' : undefined}
+                  >
+                    {item.labelZh}
+                    <span className="nav-en" lang="en">{item.labelEn}</span>
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </div>
+        ) : null}
       </header>
       <main id="work" className="work">
         {children}
@@ -62,8 +93,8 @@ export function Missing () {
   return (
     <article className="missing">
       <h1>页面不存在 <span lang="en">Page not found</span></h1>
-      <p>这个地址没有对应的二分查找页面。</p>
-      <p lang="en">This address does not match a binary-search page.</p>
+      <p>这个地址没有对应的算法页面。</p>
+      <p lang="en">This address does not match an algorithm page.</p>
       <Link className="text-link" to="/binary-search">返回二分查找</Link>
     </article>
   )

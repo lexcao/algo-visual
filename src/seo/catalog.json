@@ -1,8 +1,48 @@
 {
+  "nav": [
+    {
+      "id": "binary-search",
+      "path": "/binary-search",
+      "prefix": "/binary-search",
+      "labelZh": "二分查找",
+      "labelEn": "Binary search"
+    },
+    {
+      "id": "bubble-sort",
+      "path": "/sorting/bubble-sort",
+      "labelZh": "冒泡",
+      "labelEn": "Bubble"
+    },
+    {
+      "id": "quick-sort",
+      "path": "/sorting/quick-sort",
+      "labelZh": "快排",
+      "labelEn": "Quick"
+    },
+    {
+      "id": "grid-search",
+      "path": "/graph/grid-search",
+      "labelZh": "网格",
+      "labelEn": "Grid"
+    },
+    {
+      "id": "two-pointers",
+      "path": "/two-pointers",
+      "labelZh": "双指针",
+      "labelEn": "Pointers"
+    },
+    {
+      "id": "sliding-window",
+      "path": "/sliding-window",
+      "labelZh": "窗口",
+      "labelEn": "Window"
+    }
+  ],
   "routes": [
     {
       "id": "index",
       "path": "/binary-search",
+      "family": "binary-search",
       "titleSuffix": "二分查找",
       "labelZh": "二分查找",
       "labelEn": "Binary search",
@@ -13,6 +53,7 @@
     {
       "id": "sorted-array",
       "path": "/binary-search/sorted-array",
+      "family": "binary-search",
       "titleSuffix": "有序数组上的二分查找",
       "labelZh": "有序数组",
       "labelEn": "Sorted array",
@@ -23,6 +64,7 @@
     {
       "id": "sorted-array-with-duplicate",
       "path": "/binary-search/sorted-array-with-duplicate",
+      "family": "binary-search",
       "titleSuffix": "含重复值的二分查找",
       "labelZh": "含重复",
       "labelEn": "Duplicates",
@@ -33,6 +75,7 @@
     {
       "id": "rotated-sorted-array",
       "path": "/binary-search/rotated-sorted-array",
+      "family": "binary-search",
       "titleSuffix": "旋转有序数组上的二分查找",
       "labelZh": "旋转",
       "labelEn": "Rotated",
@@ -43,12 +86,98 @@
     {
       "id": "rotated-sorted-array-with-duplicate",
       "path": "/binary-search/rotated-sorted-array-with-duplicate",
+      "family": "binary-search",
       "titleSuffix": "旋转且含重复的二分查找",
       "labelZh": "旋转且重复",
       "labelEn": "Rotated, duplicates",
       "summary": "在旋转且含重复值的数组上演示二分查找：先跳过两端重复，再按旋转规则比较中点。",
       "introZh": "这一份同时处理旋转和重复。先跳过两端相同的值，再按旋转数组的规则比较中点。",
       "introEn": "This variant handles both rotation and duplicates. Equal values at either end are skipped first, then the midpoint is compared with the rotated-array rule."
+    },
+    {
+      "id": "bubble-sort",
+      "path": "/sorting/bubble-sort",
+      "family": "sorting",
+      "teaches": "Bubble sort",
+      "titleSuffix": "冒泡排序",
+      "labelZh": "冒泡排序",
+      "labelEn": "Bubble sort",
+      "summary": "逐步演示冒泡排序：相邻两项逆序就交换，每一趟把当前最大的数沉到末尾。可改序列，可播放、暂停、单步和变速。",
+      "introZh": "从左到右比较相邻的两个数。左边更大就交换。一趟走完，最大的数落在这一趟的末尾，不再参与后面的比较。",
+      "introEn": "Compare each adjacent pair from left to right. Swap when the left value is larger. After a pass, the largest value of that pass sits at the end and stays there.",
+      "time": "O(n²)",
+      "space": "O(1)",
+      "complexityZh": "最坏和平均大约比较 n²/2 次。某一趟没有交换，就说明已经有序，可以提前结束，最好是 O(n)。",
+      "complexityEn": "Worst and average cases compare about n²/2 pairs. A pass with no swaps means the sequence is sorted, so the best case stops in O(n).",
+      "preview": "5 1 4 2 8"
+    },
+    {
+      "id": "quick-sort",
+      "path": "/sorting/quick-sort",
+      "family": "sorting",
+      "teaches": "Quicksort",
+      "titleSuffix": "快速排序",
+      "labelZh": "快速排序",
+      "labelEn": "Quicksort",
+      "summary": "逐步演示快速排序的划分：选末尾为枢轴，把较小的数换到左边，枢轴落到最终位置后再处理两侧。可改序列，可播放、暂停、单步和变速。",
+      "introZh": "每次拿区间最右边的数当枢轴。比它小的数换到左段，然后把枢轴换到中间。枢轴就不再移动，左右两段各自重复。",
+      "introEn": "Each range takes its rightmost value as the pivot. Smaller values swap into the left side, then the pivot swaps into the middle and stays there. The two sides repeat.",
+      "time": "O(n log n)",
+      "space": "O(log n)",
+      "complexityZh": "平均时间 O(n log n)。每次都切成极不平衡的两段时，退化为 O(n²)。这里画出的调用深度平均是 O(log n)。",
+      "complexityEn": "Average time is O(n log n). Splits that are always unbalanced degrade to O(n²). The call depth drawn here is O(log n) on average.",
+      "preview": "7 2 1 6 8 5 3 4"
+    },
+    {
+      "id": "grid-search",
+      "path": "/graph/grid-search",
+      "family": "graph",
+      "teaches": "Breadth-first search and depth-first search",
+      "titleSuffix": "网格上的广度优先与深度优先",
+      "labelZh": "网格搜索",
+      "labelEn": "Grid search",
+      "summary": "在网格上逐步演示广度优先搜索和深度优先搜索：点格子改墙，看队列或栈如何扩展，直到走到终点或确认走不到。",
+      "introZh": "从左上角出发，走到右下角。广度优先用队列，先扩展先遇到的格子，第一次到达终点就是最短路。深度优先用栈，沿一条路走到底再回头。",
+      "introEn": "Start at the top left and reach the bottom right. Breadth-first search uses a queue, so the first time it reaches the goal is a shortest path. Depth-first search uses a stack and follows one path to its end before backtracking.",
+      "time": "O(R×C)",
+      "space": "O(R×C)",
+      "complexityZh": "每个格子最多进队列或栈一次。行数 R、列数 C，时间和额外空间都是 O(R×C)。",
+      "complexityEn": "Each cell enters the queue or stack at most once. With R rows and C columns, time and extra space are both O(R×C).",
+      "preview": "5×8 迷宫"
+    },
+    {
+      "id": "two-pointers",
+      "path": "/two-pointers",
+      "family": "pointers",
+      "teaches": "Two pointers",
+      "titleSuffix": "有序数组上的双指针",
+      "labelZh": "双指针",
+      "labelEn": "Two pointers",
+      "summary": "在升序数组上用左右指针找两个数，使它们的和等于目标：和偏小就右移左指针，和偏大就左移右指针。可改序列和目标。",
+      "introZh": "左指针从最小的数开始，右指针从最大的数开始。两端之和小于目标，说明左边太小，左指针右移；大于目标，右边太大，右指针左移。",
+      "introEn": "The left pointer starts at the smallest value and the right pointer at the largest. A sum below the target moves the left pointer right. A sum above the target moves the right pointer left.",
+      "time": "O(n)",
+      "space": "O(1)",
+      "complexityZh": "数组必须先有序。两端相向移动，每个指针最多走 n 步，所以是 O(n)，只用常数空间。",
+      "complexityEn": "The array has to be sorted first. The pointers only move toward each other, at most n steps in total, so the scan is O(n) and uses constant space.",
+      "preview": "1 3 4 6 8 11"
+    },
+    {
+      "id": "sliding-window",
+      "path": "/sliding-window",
+      "family": "window",
+      "teaches": "Sliding window",
+      "titleSuffix": "固定长度的滑动窗口",
+      "labelZh": "滑动窗口",
+      "labelEn": "Sliding window",
+      "summary": "逐步演示长度为 k 的滑动窗口：维护窗口和，右端前进一格时减去离开的数、加上新进入的数，并记下最大和。可改序列和 k。",
+      "introZh": "先求出前 k 个数的和。窗口每向右滑一格，减去最左边离开的数，加上新进来的数，不必把窗口里的数重新加一遍。",
+      "introEn": "Start with the sum of the first k values. Each slide drops the value leaving on the left and adds the value entering on the right, without summing the window again.",
+      "time": "O(n)",
+      "space": "O(1)",
+      "complexityZh": "每个数最多进窗口一次、出窗口一次，所以是 O(n)，只额外记下当前和与最大和。",
+      "complexityEn": "Each value enters and leaves the window at most once, so the scan is O(n), keeping only the current sum and the best sum.",
+      "preview": "2 1 5 1 3 2"
     }
   ]
 }
