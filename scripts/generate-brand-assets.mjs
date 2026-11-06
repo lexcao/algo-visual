@@ -6,6 +6,7 @@ import { Resvg } from '@resvg/resvg-js'
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const branding = JSON.parse(fs.readFileSync(path.join(root, 'src/branding.json'), 'utf8'))
 const publicDir = path.join(root, 'public')
+const marksDir = path.join(root, 'scripts/brand-marks')
 const fontDir = path.join(publicDir, 'fonts')
 
 const lacquer = branding.palette.lacquer
@@ -38,6 +39,10 @@ function xml (value) {
     .replace(/"/g, '&quot;')
 }
 
+function readMark (name) {
+  return fs.readFileSync(path.join(marksDir, name), 'utf8')
+}
+
 function cells () {
   const parts = []
   for (let i = 0; i < 9; i++) {
@@ -55,23 +60,27 @@ function cells () {
 
 function ogSvg () {
   const host = branding.siteUrl.replace(/^https?:\/\//, '')
+  // Lettermark-style name: split on middle dot so the cinnabar · is drawn separately
+  const parts = String(branding.name).split('·')
+  const left = parts[0] || branding.name
+  const right = parts[1] || ''
+  // Approximate mono lettermark with Noto Sans SC (generator fonts); spacing tuned for algo·pace
+  const leftX = 80
+  const leftSize = 72
+  // rough advance for "algo" at 72px ~ 4 * 0.62em
+  const leftW = left.length * leftSize * 0.62
+  const dotX = leftX + leftW + 8
+  const rightX = dotX + 28
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="${lacquer}"/>
-  <text x="80" y="230" font-family="Noto Serif SC" font-size="78" font-weight="600" fill="${bone}">${xml(branding.name)}</text>
+  <text x="${leftX}" y="230" font-family="Noto Sans SC" font-size="${leftSize}" font-weight="600" fill="${bone}">${xml(left)}</text>
+  <circle cx="${dotX + 10}" cy="204" r="10" fill="${cinnabar}"/>
+  <text x="${rightX}" y="230" font-family="Noto Sans SC" font-size="${leftSize}" font-weight="600" fill="${bone}">${xml(right)}</text>
   <text x="80" y="310" font-family="Noto Sans SC" font-size="36" fill="${bone}">${xml(branding.tagline)}</text>
   <text x="80" y="362" font-family="Noto Sans SC" font-size="28" fill="${inkSoft}">${xml(branding.taglineEn)}</text>
   <g transform="translate(80 410)">${cells()}</g>
   <text x="80" y="560" font-family="Noto Sans SC" font-size="22" fill="${inkSoft}">${xml(host)}</text>
-</svg>`
-}
-
-function iconSvg () {
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <rect x="1" y="1" width="30" height="30" rx="7" fill="${lacquer}"/>
-  <rect x="7" y="14.5" width="18" height="3" rx="1.5" fill="${bone}"/>
-  <rect x="13.5" y="11" width="5" height="10" rx="1" fill="${cinnabar}"/>
 </svg>`
 }
 
@@ -100,13 +109,16 @@ function writeIco (images) {
   return Buffer.concat([head, ...entries, ...images.map(image => image.png)])
 }
 
-const icon = iconSvg()
-const png16 = raster(icon, 16)
-const png32 = raster(icon, 32)
-const apple = raster(icon, 180)
+const icon32 = readMark('favicon-32.svg')
+const icon180 = readMark('favicon-180.svg')
+const png16 = raster(icon32, 16)
+const png32 = raster(icon32, 32)
+const apple = raster(icon180, 180)
 const og = raster(ogSvg(), 1200)
 
 fs.mkdirSync(publicDir, { recursive: true })
+// Public SVG favicon: same approved mark, so /favicon.svg never falls through to HTML
+fs.writeFileSync(path.join(publicDir, 'favicon.svg'), icon32)
 fs.writeFileSync(path.join(publicDir, 'favicon-16.png'), png16)
 fs.writeFileSync(path.join(publicDir, 'favicon-32.png'), png32)
 fs.writeFileSync(path.join(publicDir, 'apple-touch-icon.png'), apple)
@@ -118,11 +130,12 @@ fs.writeFileSync(path.join(publicDir, 'favicon.ico'), writeIco([
 
 const provenance = {
   generator: 'scripts/generate-brand-assets.mjs',
-  reads: 'src/branding.json',
-  note: 'Neutral placeholder mark and OG template. Not a finished logo. Text is the configured name, tagline, and host.',
+  reads: ['src/branding.json', 'scripts/brand-marks/favicon-32.svg', 'scripts/brand-marks/favicon-180.svg'],
+  note: 'Lettermark favicon is a + cinnabar dot (algo·pace). OG is generated from branding.json.',
   name: branding.name,
   tagline: branding.tagline,
-  taglineEn: branding.taglineEn
+  taglineEn: branding.taglineEn,
+  iconVersion: branding.iconVersion
 }
 fs.writeFileSync(path.join(publicDir, 'og.png.json'), JSON.stringify(provenance, null, 2) + '\n')
-console.log('wrote favicon, apple touch icon, and og.png from branding.json')
+console.log('wrote favicon.svg/ico/png, apple-touch-icon, and og.png from branding + brand-marks')

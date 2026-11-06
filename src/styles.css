@@ -123,11 +123,17 @@ body {
 .brand {
   color: var(--bone);
   text-decoration: none;
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  letter-spacing: -0.03em;
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   line-height: 1;
   white-space: nowrap;
+}
+
+.brand-dot {
+  color: var(--cinnabar);
+  padding: 0 0.02em;
 }
 
 .nav {

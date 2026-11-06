@@ -1,13 +1,14 @@
 {
-  "name": "Algo-Visual",
-  "tagline": "把算法的每一步摊开",
-  "taglineEn": "Algorithms, one step at a time",
+  "name": "algo·pace",
+  "tagline": "一步一步走算法",
+  "taglineEn": "Walk algorithms at your own pace",
   "siteUrl": "https://algo.lexcao.io",
   "locale": "zh-CN",
   "themeColor": "#1A1410",
-  "iconVersion": "1",
+  "iconVersion": "2",
   "icons": {
     "favicon": "/favicon.ico",
+    "svg": "/favicon.svg",
     "png16": "/favicon-16.png",
     "png32": "/favicon-32.png",
     "apple": "/apple-touch-icon.png",

@@ -1,5 +1,5 @@
 ---
-name: Algo-Visual
+name: algo·pace
 description: "A lacquer-and-bone study surface with one cinnabar measure."
 colors:
   cinnabar: "#8E2A22"
@@ -134,13 +134,13 @@ components:
     typography: "{typography.body}"
 ---
 
-# Design System: Algo-Visual
+# Design System: algo·pace
 
 ## Overview
 
 **Creative North Star: "The Suanpan Span"**
 
-Algo-Visual is a study surface: a lacquer shell over a bone page, with cinnabar as the only accent. The accent fills the midpoint and the measured span, and it fills the one primary button. The same red marks whatever is current: the nav underline, the code-line number, the trace index, the caret, and the focus ring. Low and high stay ink. A cell outside the range drops to one quiet tone.
+algo·pace is a study surface: a lacquer shell over a bone page, with cinnabar as the only accent. The accent fills the midpoint and the measured span, and it fills the one primary button. The same red marks whatever is current: the nav underline, the code-line number, the trace index, the caret, and the focus ring. Low and high stay ink. A cell outside the range drops to one quiet tone.
 
 Chinese is the primary line. Noto Serif SC carries the brand, the page title, and the section titles. Noto Sans SC carries the UI, including the English line set under each serif title. JetBrains Mono is loaded for the code block and for nothing else. The page is one left-aligned column. Reading text holds to 68ch. The array is the working object, and the status sentence and the buttons sit directly under it.
 
